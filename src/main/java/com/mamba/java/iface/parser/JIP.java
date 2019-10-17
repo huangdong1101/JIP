@@ -121,10 +121,10 @@ public class JIP {
         }
     }
 
-    private static <T> String parseInterfaces(IParser<T> adc, URLClassLoader classLoader, T data) throws Exception {
+    private static <T> String parseInterfaces(IParser<T> parser, URLClassLoader classLoader, T data) throws Exception {
         StringBuilder sb = new StringBuilder();
         sb.append("{\"interfaces\":[");
-        adc.append(classLoader, data, sb);
+        parser.append(classLoader, data, sb);
         if (sb.length() == 1) {
             sb.append(']');
         } else {
